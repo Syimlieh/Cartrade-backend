@@ -27,4 +27,3 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: git pull origin main
-    - run: pm2 restart app.js
