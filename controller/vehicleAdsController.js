@@ -2,11 +2,18 @@ const VehicleAds = require("../models/vehicleAds");
 const catchAsyncError = require("../middleware/catchAsyncError");
 
 const addAds = catchAsyncError(async (req, res, next) => {
-    const { title, description, image, price, address, make, year, fuel, kmsDriven, noOwner, status } = req.body;
-console.log(VehicleAds)
+    const { title, description, myFile, price, address, make, year, fuel, kmsDriven, noOwner, status } = req.body;
+    console.log(req.files);
+    console.log(req.body.data)
+    console.log(myFile);
+    console.log(VehicleAds);
+    const imageObj = {
+        image: req.file.filename
+    }
     const ads = await VehicleAds.create({
         title,
         description,
+        // images: [imageObj],
         price,
         address,
         make,

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const connectDatabase = () => {
-    mongoose.connect('mongodb://localhost:27017/carTrade',
+    mongoose.connect(process.env.MONGODB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true

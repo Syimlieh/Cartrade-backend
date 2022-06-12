@@ -11,7 +11,7 @@ const VehicleAdsSchema = mongoose.Schema({
         trim: true,
         required: [true, "Description is Required"]
     },
-    image: [
+    images: [
         {
             type: String,
             required: [true, "Require at least One Image"],
