@@ -82,11 +82,13 @@ app.use(function(req, res, next) {
 connectDatabase();
 
 const auth = require("./routes/auth")
+const user = require("./routes/user")
 const verifyToken = require("./routes/verifyToken");
 const getVehicle = require('./routes/vehicle');
 const vehicleAds = require('./routes/vehicleAds');
 
 app.use('/api/v1/', auth);
+app.use('/api/v1/users', user);
 app.use('/api/v1/refreshToken', verifyToken);
 app.use('/api/v1/', getVehicle);
 app.use('/api/v1/vehicle/ads/', vehicleAds);
